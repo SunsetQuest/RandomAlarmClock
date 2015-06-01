@@ -1,0 +1,84 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="RandomAlarmClock.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="LastActiveIndex" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="Name0" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Poster</Value>
+    </Setting>
+    <Setting Name="Text0" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Are you sitting correctly?</Value>
+    </Setting>
+    <Setting Name="IsRunning0" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="Peek0" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="AvgInterval0" Type="System.TimeSpan" Scope="User">
+      <Value Profile="(Default)">00:30:00</Value>
+    </Setting>
+    <Setting Name="Name1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Water</Value>
+    </Setting>
+    <Setting Name="Text1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Are you keeping up on your liquids?</Value>
+    </Setting>
+    <Setting Name="IsRunning1" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="Peek1" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="AvgInterval1" Type="System.TimeSpan" Scope="User">
+      <Value Profile="(Default)">00:30:00</Value>
+    </Setting>
+    <Setting Name="Name2" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Text2" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="IsRunning2" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Peek2" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="AvgInterval2" Type="System.TimeSpan" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Name3" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Text3" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="IsRunning3" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Peek3" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="AvgInterval3" Type="System.TimeSpan" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Name4" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Text4" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="IsRunning4" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Peek4" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="AvgInterval4" Type="System.TimeSpan" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+  </Settings>
+</SettingsFile>
