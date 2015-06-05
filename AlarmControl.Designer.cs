@@ -32,7 +32,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AlarmControl));
             this.btnEnabled = new System.Windows.Forms.Button();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.cbPeek = new System.Windows.Forms.CheckBox();
             this.listViewAlarms = new System.Windows.Forms.ListView();
             this.labelText = new System.Windows.Forms.Label();
@@ -42,28 +42,33 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // btnEnabled
             // 
+            this.btnEnabled.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnEnabled.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.btnEnabled.FlatAppearance.BorderSize = 0;
             this.btnEnabled.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEnabled.ForeColor = System.Drawing.Color.Transparent;
             this.btnEnabled.ImageIndex = 0;
-            this.btnEnabled.ImageList = this.imageList1;
+            this.btnEnabled.ImageList = this.imageList;
             this.btnEnabled.Location = new System.Drawing.Point(0, 0);
             this.btnEnabled.Name = "btnEnabled";
             this.btnEnabled.Size = new System.Drawing.Size(37, 36);
             this.btnEnabled.TabIndex = 0;
             this.btnEnabled.Tag = "";
-            this.btnEnabled.UseVisualStyleBackColor = true;
+            this.toolTip.SetToolTip(this.btnEnabled, "Start/Stop this timer");
+            this.btnEnabled.UseVisualStyleBackColor = false;
             this.btnEnabled.Click += new System.EventHandler(this.btnEnabled_Click);
             // 
-            // imageList1
+            // imageList
             // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "Stop.png");
-            this.imageList1.Images.SetKeyName(1, "Go.png");
+            this.imageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList.ImageStream")));
+            this.imageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList.Images.SetKeyName(0, "Stop.png");
+            this.imageList.Images.SetKeyName(1, "Go.png");
             // 
             // cbPeek
             // 
@@ -74,6 +79,7 @@
             this.cbPeek.TabIndex = 1;
             this.cbPeek.Tag = "";
             this.cbPeek.Text = "Peek";
+            this.toolTip.SetToolTip(this.cbPeek, "show upcomming times");
             this.cbPeek.UseVisualStyleBackColor = true;
             this.cbPeek.CheckedChanged += new System.EventHandler(this.cbPeek0_CheckedChanged);
             // 
@@ -85,6 +91,7 @@
             this.listViewAlarms.TabIndex = 14;
             this.listViewAlarms.TabStop = false;
             this.listViewAlarms.Tag = "";
+            this.toolTip.SetToolTip(this.listViewAlarms, "displays upcoming events (Peek must be enabled)");
             this.listViewAlarms.UseCompatibleStateImageBehavior = false;
             this.listViewAlarms.View = System.Windows.Forms.View.SmallIcon;
             // 
@@ -102,7 +109,7 @@
             this.txtText.Name = "txtText";
             this.txtText.Size = new System.Drawing.Size(174, 20);
             this.txtText.TabIndex = 4;
-            this.txtText.Tag = "";
+            this.toolTip.SetToolTip(this.txtText, "Some more detailed text to for this timer.");
             this.txtText.Validating += new System.ComponentModel.CancelEventHandler(this.txtText_Validating);
             // 
             // labelInterval
@@ -113,6 +120,7 @@
             this.labelInterval.Size = new System.Drawing.Size(64, 13);
             this.labelInterval.TabIndex = 13;
             this.labelInterval.Text = "Avg Interval";
+            this.toolTip.SetToolTip(this.labelInterval, "The random times will be between 0 and double this amount.");
             // 
             // txtInterval
             // 
@@ -120,16 +128,18 @@
             this.txtInterval.Name = "txtInterval";
             this.txtInterval.Size = new System.Drawing.Size(174, 20);
             this.txtInterval.TabIndex = 3;
+            this.toolTip.SetToolTip(this.txtInterval, "The random times will be between 0 and double this amount.");
             this.txtInterval.Validating += new System.ComponentModel.CancelEventHandler(this.txtInterval0_Validating);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 140);
+            this.label1.Location = new System.Drawing.Point(31, 140);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 13);
+            this.label1.Size = new System.Drawing.Size(39, 13);
             this.label1.TabIndex = 17;
-            this.label1.Text = "Message";
+            this.label1.Text = "Details";
+            this.toolTip.SetToolTip(this.label1, "Some more detailed text to for this timer.");
             // 
             // label2
             // 
@@ -139,6 +149,7 @@
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 19;
             this.label2.Text = "Name";
+            this.toolTip.SetToolTip(this.label2, "A short name to give this timer.");
             // 
             // txtName
             // 
@@ -148,6 +159,7 @@
             this.txtName.Size = new System.Drawing.Size(174, 20);
             this.txtName.TabIndex = 2;
             this.txtName.Tag = "";
+            this.toolTip.SetToolTip(this.txtName, "A short name to give this timer.");
             this.txtName.Validating += new System.ComponentModel.CancelEventHandler(this.txtName_Validating);
             // 
             // AlarmControl
@@ -180,9 +192,10 @@
         private System.Windows.Forms.TextBox txtText;
         private System.Windows.Forms.Label labelInterval;
         private System.Windows.Forms.TextBox txtInterval;
-        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.ImageList imageList;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.ToolTip toolTip;
     }
 }

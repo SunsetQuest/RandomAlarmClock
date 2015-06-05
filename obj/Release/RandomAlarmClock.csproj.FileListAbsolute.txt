@@ -1,1 +1,13 @@
 C:\Rep\RandomAlarmClock\RandomAlarmClock\bin\Release\RandomAlarmClock.exe.config
+C:\Rep\RandomAlarmClock\RandomAlarmClock\bin\Release\RandomAlarmClock.exe
+C:\Rep\RandomAlarmClock\RandomAlarmClock\bin\Release\RandomAlarmClock.pdb
+C:\Rep\RandomAlarmClock\RandomAlarmClock\obj\Release\RandomAlarmClock.csprojResolveAssemblyReference.cache
+C:\Rep\RandomAlarmClock\RandomAlarmClock\obj\Release\RandomAlarmClock.AlarmClockApp.resources
+C:\Rep\RandomAlarmClock\RandomAlarmClock\obj\Release\RandomAlarmClock.Properties.Resources.resources
+C:\Rep\RandomAlarmClock\RandomAlarmClock\obj\Release\RandomAlarmClock.AlarmControl.resources
+C:\Rep\RandomAlarmClock\RandomAlarmClock\obj\Release\RandomAlarmClock.csproj.GenerateResource.Cache
+C:\Rep\RandomAlarmClock\RandomAlarmClock\obj\Release\RandomAlarmClock.exe
+C:\Rep\RandomAlarmClock\RandomAlarmClock\obj\Release\RandomAlarmClock.pdb
+C:\Rep\RandomAlarmClock\bin\Release\RandomAlarmClock.exe.config
+C:\Rep\RandomAlarmClock\obj\Release\RandomAlarmClock.exe
+C:\Rep\RandomAlarmClock\obj\Release\RandomAlarmClock.pdb

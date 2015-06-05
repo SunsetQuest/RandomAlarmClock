@@ -1,4 +1,6 @@
-﻿using System;
+﻿// Copyright by Ryan S White, 2015 Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;

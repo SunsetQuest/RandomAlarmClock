@@ -64,8 +64,7 @@ namespace RandomAlarmClock
 
         private void NewAlarm_Elapsed(int id, string shortName, string details)
         {
-            notifyIcon1.ShowBalloonTip(1000, shortName, details, ToolTipIcon.Info);
-            //notifyIcon1.v
+            notifyIcon.ShowBalloonTip(1000, shortName, details, ToolTipIcon.Info);
         }
 
         private void AlarmControl1_SettingUpdate(int id, string shortName, string details, bool running, bool peekFuture, TimeSpan avgTimeSpan)
@@ -164,17 +163,37 @@ namespace RandomAlarmClock
         private void notifyIcon1_MouseClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
+                ToggleSettingsWindowVisable();
+        }
+
+        private void ToggleSettingsWindowVisable()
+        {
+            if (WindowState == FormWindowState.Normal)
             {
-                if (WindowState == FormWindowState.Normal)
-                {
-                    WindowState = FormWindowState.Minimized;
-                    Hide();
-                }
-                else
-                {
-                    Show();
-                    WindowState = FormWindowState.Normal;
-                }
+                WindowState = FormWindowState.Minimized;
+                Hide();
+            }
+            else
+            {
+                Show();
+                WindowState = FormWindowState.Normal;
+            }
+        }
+
+        private void toolStripMenuItemShow_Click(object sender, EventArgs e)
+        {
+            ToggleSettingsWindowVisable();
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+            {
+                contextMenuStrip.Items[0].Text = "Hide";
+            }
+            else
+            {
+                contextMenuStrip.Items[0].Text = "Show";
             }
         }
     }

@@ -1,7 +1,9 @@
-﻿// RandomTimer operates simular to  System.Timers.Timer however the interval is random. In fact it implments System.Timers.Timer for its timer operations.
-
-// Credits: Some of the documentation below was copied and modified from the System.Timers.Timer class. 
-
+﻿// Copyright by Ryan S White, 2015 Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
+//
+// RandomTimer operates similar to  System.Timers.Timer however the interval is random. In fact it 
+// implements System.Timers.Timer for its timer operations.
+// 
+// Sources/Credits: Some of the documentation below was copied and modified from the System.Timers.Timer class. 
 
 using System;
 using System.Timers;
@@ -11,48 +13,59 @@ namespace RandomAlarmClock
 {
     public class RandomTimer : IDisposable
     {
+        /// <summary>
+        /// This EventHandler is executed when the Random Timer Elapses.
+        /// </summary>
         public event ElapsedEventHandler Elapsed;
-
+        
+        private Random rand = new Random();
+        
         /// <summary>
         /// Interval in ms
         /// </summary>
         private double _avgInterval;
-        private readonly int _lookAheadCount;
+        
+        /// <summary>
+        /// This is one greater then the number of future items that are stored.  Normally this is 1 
+        /// if is not needed. Value must be 2 or larger.
+        /// </summary>
         private readonly int _totalCount;
+        
+        /// <summary>
+        /// This is the index of the next item in _futureIntervals[] that the timer will stop on.  
+        /// </summary>
         private int _nextIdx = 0;
+        
+        /// <summary>
+        /// This is an array of what the future intervals will be.
+        /// </summary>
         private double[] _futureIntervals;
-        private Random rand = new Random();
+
+        /// <summary>
+        /// Random Timer uses a Systems.Timers.Timer as Delegation.
+        /// </summary>
         private System.Timers.Timer timer;
 
-        // Summary:
-        //     Gets or sets a value indicating whether RandomTimer should raise
-        //     the RandomTimer.Elapsed event each time the specified interval elapses
-        //     or only after the first time it elapses.
-        //
-        // Returns:
-        //     true if the RandomTimer should raise the RandomTimer.Elapsed
-        //     event each time the interval elapses; false if it should raise the RandomTimer.Elapsed
-        //     event only once, after the first time the interval elapses. The default is true.
         /// <summary>
-        ///     Gets or sets whether the RandomTimer should automaticlly restart the timer on each
-        ///     RandomTimer.Elapsed event. The default value is true.
+        /// Gets or sets whether the RandomTimer should automatically restart the timer on each
+        /// RandomTimer.Elapsed event. The default value is true.
         /// </summary>
         public bool AutoReset { get; set; }
 
-
         /// <summary>
-        /// Creates a new instance of RandomTimer. An ArgumentException is thrown if the lookAheadCount is less then 1. 
+        /// Creates a new instance of RandomTimer. An ArgumentException is thrown if the lookAheadCount is 
+        /// less then 1. 
         /// </summary>
         /// <param name="avgInterval">The average and middle interval in milliseconds.</param>
         /// <param name="lookAheadCount">The number to intervals to store in advance. Minimum is 1.</param>
         public RandomTimer(double avgInterval, int lookAheadCount = 1)
         {
             _avgInterval = avgInterval;
-            _lookAheadCount = lookAheadCount;
-            _totalCount = _lookAheadCount + 1;
+            _totalCount = lookAheadCount + 1;
 
             if (lookAheadCount <= 0)
-                throw new ArgumentException("The lookAheadCount paramiter must be greater then 0.", "lookAheadCount");
+                throw new ArgumentException("The lookAheadCount parameter must be greater then 0.", 
+                    "lookAheadCount");
 
             _futureIntervals = new double[_totalCount];
             for (int i = 0; i < _totalCount; i++)
@@ -60,7 +73,8 @@ namespace RandomAlarmClock
 
             timer = new System.Timers.Timer(GetNewInterval());
 
-            // AutoReset needs to be false. If it were set to true then its possible that the next interval might not be assigned in time. New interval is set in the Elapsed event.
+            // AutoReset needs to be false. If it were set to true then its possible that the next interval 
+            // might not be assigned in time. New interval is set in the Elapsed event.
             timer.AutoReset = false;
             AutoReset = true;
 
@@ -101,6 +115,9 @@ namespace RandomAlarmClock
         }
 
 
+        /// <summary>
+        /// Disables the raising of the Elapsed event.
+        /// </summary>
         public void Stop()
         {
             timer.Stop();
@@ -121,15 +138,14 @@ namespace RandomAlarmClock
             }
         }
 
-
         /// <summary>
         /// Gets or sets the average and middle interval in milliseconds to raise the 
         /// RandomTimer.Elapsed event. The value must be greater then zero and equal to 
         /// or less then Int32.MaxValue. The average times generated will be between
-        /// 1 ms and and double the average interval.
+        /// 1 ms and double the average interval.
         /// A System.ArgumentException will be thrown if the interval is less than one or if 
         /// the interval is greater than Int32.MaxValue the next time the timer is enabled.
-        /// If the timer is currently enabled it will throw the exception immediatly. 
+        /// If the timer is currently enabled it will throw the exception immediately. 
         /// </summary>
         public double Interval
         {
@@ -149,8 +165,9 @@ namespace RandomAlarmClock
             }
 
         }
+
         /// <summary>
-        /// This is simular to the Interval property but uses TimeSpan instead.
+        /// This is similar to the Interval property but uses TimeSpan instead.
         /// </summary>
         public TimeSpan IntervalAsTimeSpan
         {
